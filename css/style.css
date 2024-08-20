@@ -1,0 +1,74 @@
+.navbar-brand{
+    color: #fd7e14 !important;
+}
+
+.img-fluid{
+    max-height: 60vh;
+    min-width: 100%;
+
+} 
+
+.display-6{
+    color: tomato !important;
+    
+}
+
+.img-thumbnail{
+    max-height: 20vh;
+    min-width: 80%;
+}
+
+.flex-rowbgc{
+    background-color: #151E3D;
+    
+}
+
+.align-self-center{
+    color: #fd7e14 !important;
+    font-family: 'Sedan',sans-serif !important;
+    
+}
+
+
+  
+.sedan-regular-italic {
+    font-family: "Sedan", serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+
+
+  .footer-links a {
+    color: white; /* Default link color */
+    text-decoration: none; /* Remove underlines */
+  }
+
+  .footer-links a:hover, .footer-links a:focus {
+    color: #fd7e14; /* Color on hover/focus */
+  }
+
+  .footer-links a.active {
+    color: #fd7e14; /* Color for active links */
+  }
+
+
+
+/* Custom styles for navbar links */
+.navbar-nav .nav-link {
+    color: white; /* Default link color */
+    text-decoration: none; /* Remove underlines */
+  }
+  
+  .navbar-nav .nav-link:hover, .navbar-nav .nav-link:focus {
+    color: #fd7e14; /* Color on hover/focus */
+  }
+  
+  .navbar-nav .nav-link.active {
+    color: #fd7e14; /* Color for active link */
+  }
+  
+  /* Ensure that the active link (HOME) has the correct color */
+  .navbar-nav .nav-item .nav-link.active {
+    color: #fd7e14 !important; /* Make sure the active link color is applied */
+  }
+  
