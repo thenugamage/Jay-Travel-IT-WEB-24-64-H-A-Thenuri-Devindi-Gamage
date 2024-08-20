@@ -1,40 +1,36 @@
-<script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const form = document.querySelector('form');
-            form.addEventListener('submit', function (event) {
-                const fname = document.getElementById('floatingFname').value;
-                const lname = document.getElementById('floatingLname').value;
-                const email = document.getElementById('floatingEmail').value;
-                const phone = document.getElementById('floatingPhone').value;
-                const isChecked = document.getElementById('exampleCheck1').checked;
+document.getElementById('myForm').addEventListener('submit', function(event) {
+    // Get form fields
+    const firstName = document.getElementById('floatingFname').value.trim();
+    const lastName = document.getElementById('floatingLname').value.trim();
+    const email = document.getElementById('floatingEmail').value.trim();
+    const phone = document.getElementById('floatingPhone').value.trim();
+    const checkbox = document.getElementById('exampleCheck1').checked;
 
-                // Validation
-                let errors = [];
+    // Validation
+    if (!firstName || !lastName || !email || !phone) {
+        alert('All input fields must be filled.');
+        event.preventDefault(); // Prevent form submission
+        return;
+    }
 
-                if (!fname || !lname || !email || !phone) {
-                    errors.push('All fields must be filled.');
-                }
+    if (!/^\d{10}$/.test(phone)) {
+        alert('Phone number must be exactly 10 digits.');
+        event.preventDefault(); // Prevent form submission
+        return;
+    }
 
-                if (!/^\d+$/.test(phone)) {
-                    errors.push('Phone number can only contain numbers.');
-                }
+    if (!/^\S+@\S+\.\S+$/.test(email)) {
+        alert('Email must be in a valid format.');
+        event.preventDefault(); // Prevent form submission
+        return;
+    }
 
-                if (!/\S+@\S+\.\S+/.test(email)) {
-                    errors.push('Email should be in correct format.');
-                }
+    if (firstName.length > 30 || lastName.length > 30) {
+        alert('First name and last name must be 30 characters or less.');
+        event.preventDefault(); // Prevent form submission
+        return;
+    }
 
-                if (fname.length > 30) {
-                    errors.push('First name cannot exceed 30 characters.');
-                }
-
-                if (lname.length > 30) {
-                    errors.push('Last name cannot exceed 30 characters.');
-                }
-
-                if (errors.length > 0) {
-                    event.preventDefault(); // Prevent form submission
-                    alert(errors.join('\n')); // Display errors
-                }
-            });
-        });
-    </script>
+    // If all validations pass, the form will be submitted
+});
+a
